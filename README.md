@@ -3,7 +3,7 @@
   
 # Project Overview
 * Create a resume for the user using a form with their inputs
-* Aggregates tech job listings based on user's preferences
+* Aggregates tech job listings based on user's preferences and resume
 * Provides information on the company and ratings from Glass Door
 * Lets the user apply to selected job listings using information from their created resume
 * Keeps track of user's applications
@@ -30,7 +30,7 @@ Tasks
 * Days 3: Create the views and models required
 * Day 4: Link the APIs that will be used to Vue apps 
 * Day 5: Create the REST API that will be used for the application tracker
-* Days 6: Connect the "jobs applied to" model to the rest API
+* Days 6: Connect the "jobs applied to" model to the REST API
 * Days 7: Write authentication code
 * Days 8-10: Design the UI for the job listings and the application tracker and create the functionality for the user to apply to jobs with a simple click
 * Days 11-15: Finish designing the site
