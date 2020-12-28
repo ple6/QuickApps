@@ -31,5 +31,5 @@ Tasks
 * Day 4: Link the APIs that will be used to Vue apps 
 * Day 5: Create the REST API that will be used for the application tracker
 * Days 6: Connect the "jobs applied to" model to the rest API
-* Days 7-10: Design the UI for the job listings and the application tracker
+* Days 7-10: Design the UI for the job listings and the application tracker and create the functionality for the user to apply to jobs with a simple click
 * Days 11-15: Finish designing the site
