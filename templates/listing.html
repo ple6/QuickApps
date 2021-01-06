@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="app">
+  <input type="text" v-model="search">
+  <button @click="searchJobs">Search</button>
+  <div v-for="job in jobs" :key="job.id">
+    <p>[[ job ]]</p>
+  </div>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script>
+
+
+let app = new Vue({
+  el: '#app',
+  delimiters: ['[[', ']]'],
+  data: {
+    jobs: [],
+  }
+  methods: {
+    searchJobs: function() {
+      axios({
+        method: 'get',
+        url: "https://remotive.io/api/remote-jobs",
+      }). then(response => {
+        this.jobs = response.data
+      })
+    }
+
+  }
+})
+</script>
+{% endblock %}
