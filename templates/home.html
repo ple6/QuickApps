@@ -11,4 +11,45 @@
   <a href="{% url 'login' %}">Log In</a> |
   <a href="{% url 'signup' %}">Sign Up</a>
 {% endif %}
+<div id="app">
+  <input type="text" v-model="search">
+  <button @click="searchJobs">Search</button>
+  <li v-for="job in jobs" :key="job.id">
+    <p>[[ job.company_name ]]</p>
+    <p>[[ job.salary ]]</p>
+    <p>[[ job.category ]]</p>
+  </li>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+
+let app = new Vue({
+  el: '#app',
+  delimiters: ['[[', ']]'],
+  data: {
+    jobs: [],
+    search: ""
+  },
+  methods: {
+    searchJobs: function() {
+      axios({
+        method: 'get',
+        url: "https://remotive.io/api/remote-jobs",
+        params: {
+                category: this.search,
+                limit: 5
+            }
+      }). then(response => {
+        this.jobs = response.data.jobs
+      })
+    }
+
+  }
+})
+</script>
+
+
 {% endblock %}

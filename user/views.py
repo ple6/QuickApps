@@ -15,9 +15,3 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-class UserProfileView(generic.DetailView):
-    model = CustomUser
-    template_name = 'listing.html'
-
-    def get_object(self):
-        return get_object_or_404(User, username=self.kwargs['username'])
